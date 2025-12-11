@@ -211,8 +211,7 @@
 			</div>
 			<div class="rightbar-tabs tabs" id="member-tabs"> </div>		<div class="members" id="member-list"> </div>		</div>	</div>
 	<script type="module" src="./js/main.js"></script>
-	<!-- 自动填充 roomUUID 和 user 的脚本 -->
-<script>
+	<script>
 window.addEventListener('DOMContentLoaded', () => {
   const params = new URLSearchParams(window.location.search);
   const roomUUID = params.get('roomUUID');
@@ -229,13 +228,13 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // 填充用户名
   if (user) {
-    // 假设用户名输入框 id 为 username（或者根据你的页面实际改）
-    const userInput = document.getElementById('username');
+    const userInput = document.getElementById('userName'); // 注意这里和 input 的 id 一致
     if (userInput) {
       userInput.value = user;
       userInput.dispatchEvent(new Event('input', { bubbles: true }));
     }
   }
+});
 </script>
 
 
