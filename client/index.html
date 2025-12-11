@@ -228,14 +228,21 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // 填充用户名
   if (user) {
-    const userInput = document.getElementById('userName'); // 注意这里和 input 的 id 一致
+    const userInput = document.getElementById('userName');
     if (userInput) {
       userInput.value = user;
       userInput.dispatchEvent(new Event('input', { bubbles: true }));
     }
   }
+
+  // 自动点击登录按钮
+  setTimeout(() => {
+    const loginBtn = document.querySelector('button.login-btn');
+    if (loginBtn) loginBtn.click();
+  }, 100); // 延迟 100ms 保证表单渲染完成
 });
 </script>
+
 
 
 </body>
