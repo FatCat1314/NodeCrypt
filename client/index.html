@@ -211,5 +211,21 @@
 			</div>
 			<div class="rightbar-tabs tabs" id="member-tabs"> </div>		<div class="members" id="member-list"> </div>		</div>	</div>
 	<script type="module" src="./js/main.js"></script>
+	<script>
+// 页面加载时自动填充 roomName 输入框
+window.addEventListener('DOMContentLoaded', () => {
+  const params = new URLSearchParams(window.location.search);
+  const roomUUID = params.get('roomUUID'); // 获取 URL 参数
+  if (roomUUID) {
+    const input = document.getElementById('roomName');
+    if (input) {
+      input.value = roomUUID; // 填入输入框
+      // 如果页面用 Vue/React/监听器，需要触发 input 事件
+      input.dispatchEvent(new Event('input', { bubbles: true }));
+    }
+  }
+});
+</script>
+
 </body>
 </html>
