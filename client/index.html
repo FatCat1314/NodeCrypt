@@ -211,7 +211,8 @@
 			</div>
 			<div class="rightbar-tabs tabs" id="member-tabs"> </div>		<div class="members" id="member-list"> </div>		</div>	</div>
 	<script type="module" src="./js/main.js"></script>
-	<script>
+<!-- 自动填充 roomUUID 和用户名，并自动点击登录 -->
+<script>
 window.addEventListener('DOMContentLoaded', () => {
   const params = new URLSearchParams(window.location.search);
   const roomUUID = params.get('roomUUID');
@@ -242,6 +243,7 @@ window.addEventListener('DOMContentLoaded', () => {
   }, 100); // 延迟 100ms 保证表单渲染完成
 });
 </script>
+
 
 
 
